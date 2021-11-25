@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/bootsrap.css"> -->
+</head>
+<style>
+    .all {
+        background-color: yellow;
+        height: 300px;
+        /* align-content: center; */
+        left: 190px;
+    }
+    .bod {
+        align-items: center;
+    }
+    .redee {
+        color: red;
+        background-size: 400px;
+        text-size-adjust: 400px;
+        align-items: center;
+
+    }
+    #start {
+        background-color: green;   
+    }
+    #stop {
+        background-color: red;
+    }
+</style>
+<body class="bod">
+    <div class="all">
+    <div class="redee"><span id="hr"></span> <span>:</span> <span id="min"></span> <span>:</span> <span id="sec"></span></div>
+    <input type="number" id="hour">
+    <input type="number" id="minute">
+    <input type="number" id="seconds">
+    <button onclick="times() " id="start">Set Alarm</button><br><br>
+    <button onclick="stop()" id="stop">Stop</button>
+    <div id="answer"></div>
+    <input type="text " id="inp">
+    <button onclick="ent()" id="enter">Enter</button>
+    </div>
+</body>
+<script>
+    let hrs;
+    let mins;
+    let secs;
+    let audio = new Audio();
+    audio.src = "alarm.m4a";
+    function runTimes () {
+        myDate = new Date();
+        myHour = myDate.getHours();
+        myMinute = myDate.getMinutes();
+        mySeconds = myDate.getSeconds();
+        hr.innerText = myHour;
+        min.innerText = myMinute;
+        sec.innerText = mySeconds;
+        if (hrs == myHour && mins == myMinute && secs == mySeconds) {
+            audio.play();
+        }
+    }
+    function times() {
+        hrs = hour.value;
+        mins = minute.value;
+        secs = seconds.value;
+        console.log(hrs,mins,secs)
+    }
+    setInterval("runTimes()", 1000)
+
+    function stop() {
+        // var input = inp.value + "*"
+        // inp.value =input;
+        var num = "12 * 2"
+        // var input= inp.value;
+        answer.innerText = num;
+    }
+    function ent() {
+        let num = 24
+        if (num == 24) {
+            audio.pause();
+        
+    }
+    
+}
+       
+        
+  
+        
+</script>
+</html>
+
+<!-- // var sound = new Audio();
+// sound.src = "ring.mp3";
+// var timer
+// let myDATE = newDate;
+// // var myDATE.getHours();
+// // var myDATE.getMinutes();
+
+
+// function setAlarm() {
+//     alert(good)
+// //    setTimeout(setAlarm, 3000)
+// } -->
